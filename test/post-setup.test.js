@@ -5,7 +5,7 @@
  */
 
 /*
- * Copyright 2018, Joyent, Inc.
+ * Copyright 2019 Joyent, Inc.
  */
 
 /*
@@ -185,7 +185,8 @@ test('sdcadm post-setup dev-headnode-prov', function (t) {
 
             var svc = JSON.parse(stdout)[0];
 
-            if (svc.metadata.ALLOC_FILTER_HEADNODE === false &&
+            if (svc.metadata.ALLOC_FILTER_CAPNESS === false &&
+                svc.metadata.ALLOC_FILTER_HEADNODE === false &&
                 svc.metadata.ALLOC_FILTER_MIN_RESOURCES === false) {
                 t.end();
                 return;
